@@ -8,7 +8,7 @@ import lombok.ToString;
 @Table
 @Getter
 @ToString
-public class Main {
+public class Member {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -21,4 +21,8 @@ public class Main {
 
   @Column(nullable = false)
   private String password;
+
+  public void changePassword(String newPassword) {
+    this.password = newPassword;
+  }
 }
